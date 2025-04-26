@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import FlashCard from '@/components/FlashCard';
 import Navigation from '@/components/Navigation';
 import { flashcards } from '@/data/flashcards';
@@ -37,7 +37,7 @@ const Index = () => {
   const showGlobalHint = () => {
     toast({
       title: "Подсказка",
-      description: "Нажмите на карточку, чтобы увидеть ответ. Используйте кнопку с лампочкой для подсказки.",
+      description: "Нажмите на карточку, чтобы увидеть ответ. Используйте кнопку с лампочкой для дополнительной подсказки.",
     });
   };
 
@@ -55,7 +55,7 @@ const Index = () => {
 
       {/* Main content */}
       <div className="max-w-4xl mx-auto pt-16">
-        <div className="flex justify-center items-center min-h-[500px]">
+        <div className="flex justify-center items-center min-h-[500px] animate-fade-in">
           <FlashCard
             {...cards[currentCardIndex]}
             total={cards.length}
